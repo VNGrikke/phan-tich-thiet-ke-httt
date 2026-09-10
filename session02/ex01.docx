@@ -1,0 +1,46 @@
+Phần 1: Phân tích Logic
+1. Phân tích 5 thành phần httt trong phân hệ báo cáo
+Một hệ thống thông tin luôn xoay quanh 5 thành phần cơ bản. Trong bối cảnh bài toán của RikkeiExpress Logistics, 
+các thành phần này đóng vai trò như sau:
+
+Phần cứng (Hardware): Bao gồm máy chủ (server) lưu trữ thông tin giao dịch của tài xế và thiết bị đầu cuối 
+(điện thoại, máy tính bảng hoặc laptop) mà Giám đốc Vùng dùng để mở ứng dụng báo cáo.
+
+Phần mềm (Software): Ứng dụng/Hệ thống báo cáo điều hành. Hiện tại, phần mềm này đang bị lỗi logic nghiệp 
+vụ do chỉ làm nhiệm vụ "in ra màn hình" thay vì xử lý, tính toán dữ liệu.
+
+Dữ liệu (Data): Các bản ghi chép chi tiết về từng đơn hàng gửi về từ hệ thống (Mã đơn, Chi nhánh, Phí giao, Trạng thái).
+
+Quy trình (Procedures): Các quy tắc nghiệp vụ. Ở đây, quy trình chuẩn là: Chỉ ghi nhận doanh thu với đơn DELIVERED, 
+loại bỏ đơn CANCELLED/RETURNED, và tính toán các chỉ số tổng hợp trước khi báo cáo.
+
+Con người (People): Giám đốc Vùng (Người sử dụng thông tin để ra quyết định thưởng nóng), Đội ngũ tài xế 
+(Người tạo ra dữ liệu thông qua việc giao hàng), và Lập trình viên (Người xây dựng/sửa lỗi hệ thống).
+
+2. Dữ liệu thô (Data) vs. Thông tin (Information)
+Dữ liệu (Data): Là các sự kiện, con số rời rạc, chưa qua xử lý. Trong mã nguồn cũ, chuỗi "Đơn 01 - 15.000đ - DELIVERED" 
+hay "Đơn 03 - 0đ - CANCELLED" chính là dữ liệu thô. Nó mô tả sự thật nhưng không mang lại cái nhìn bao quát.
+
+Thông tin (Information): Là dữ liệu đã được tổng hợp, xử lý, phân loại và sắp xếp theo một ngữ cảnh nhất định để mang 
+lại giá trị cho người dùng. Ví dụ: "Chi nhánh A đạt tổng doanh thu 50.000.000đ với 2.000 đơn thành công".
+
+Hậu quả đối với Giám đốc Vùng:
+Việc hệ thống ném hàng ngàn dòng "Dữ liệu thô" lên màn hình dẫn đến tình trạng Quá tải thông tin (Information Overload). 
+Giám đốc không thể tự nhẩm tính hàng ngàn dòng dữ liệu để so sánh hiệu quả giữa các chi nhánh. Hệ quả là quá trình ra quyết 
+định bị đình trệ: không thể xác định nhanh chi nhánh xuất sắc để thưởng nóng, làm giảm động lực của tài xế và mất đi tính kịp thời của chiến lược quản lý.
+
+Phần 2: Thiết kế giải pháp & Viết mã nguồn
+1. Xác định Input, Output và Quy tắc xử lý
+Dữ liệu đầu vào (Input): Danh sách các bản ghi đơn hàng thô (Bao gồm mã đơn, chi nhánh, phí, trạng thái). 
+Lưu ý: Để thống kê theo chi nhánh như yêu cầu của Giám đốc, dữ liệu đầu vào cần được bổ sung thêm trường branch (Chi nhánh).
+
+Thông tin đầu ra (Output): Bảng báo cáo tổng hợp theo từng chi nhánh, bao gồm 3 chỉ số:
+
+Tổng số đơn thành công.
+
+Tổng doanh thu thực tế.
+
+Doanh thu trung bình/đơn thành công.
+
+Quy tắc lọc bẫy (Edge Cases): Sử dụng điều kiện kiểm tra trạng thái. Thuật toán sẽ bỏ qua toàn 
+bộ các đơn hàng có trạng thái khác DELIVERED. Điều này giúp tự động loại bỏ bẫy ghi nhận sai doanh thu từ các đơn âm tiền (do phí hoàn kho) hoặc đơn 0đ.

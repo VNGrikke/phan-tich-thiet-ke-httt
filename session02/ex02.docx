@@ -1,0 +1,44 @@
+Phần 1: Chữa lỗi phân loại 3 nhóm HTTT
+Dưới đây là các điểm phân loại sai của thực tập sinh và cách khắc phục:
+
+    Nhóm TPS (Tác nghiệp) đang bị sai: &quot;Báo cáo tổng hợp doanh thu tháng&quot; thuộc MIS
+    (báo cáo định kỳ). &quot;Công cụ phân tích dự báo điểm nóng...&quot; thuộc DSS (phân tích chiến
+    lược).
+
+    Nhóm MIS (Quản lý) đang bị sai: &quot;Tài xế bấm nút Đã lấy hàng&quot; và &quot;Nhân viên kho quét
+    mã vạch&quot; là các giao dịch hàng ngày, cập nhật thời gian thực, thuộc TPS.
+
+    Nhóm DSS (Hỗ trợ quyết định) đang bị sai: &quot;In phiếu cước giao hàng&quot; là một thao tác
+    xử lý giao dịch cơ bản, thuộc TPS.
+
+Bảng phân định chuẩn xác 3 nhóm HTTT:
+
+Hệ thống                    Đặc điểm / Mục tiêu                             Các tính năng chuẩn xác
+TPS (Tác nghiệp)            Xử lý giao dịch hàng ngày,nhanh, chính xác      Tài xế bấm nút Đã lấyhàng
+
+                                                                            Nhân viên kho quét mã
+                                                                            vạch nhập kho
+
+                                                                            In phiếu cước giao hàng
+
+MIS (Quản lý)               Báo cáo định kỳ, thống kê tổng hợp              Báo cáo tổng hợp doanh
+                                                                            thu tháng cho Trưởng bưu
+                                                                            cục
+
+
+
+
+DSS (Hỗ trợ quyết định)     Mô hình phân tích dữ liệu,                      Công cụ phân tích dự báo
+                            dự báo chiến lược                               điểm nóng quá tải mùa Tết   
+
+
+
+Phần 2: Giải thích &amp; Mã nguồn kiểm tra
+1. Tại sao tính năng TPS đòi hỏi tốc độ xử lý nhanh và độ chính xác tuyệt đối?
+- Tốc độ xử lý nhanh: Khối lượng giao dịch tại TPS (quét mã vạch, cập nhật trạng thái đơn) là
+khổng lồ và diễn ra liên tục theo thời gian thực. Nếu hệ thống chậm trễ sẽ gây ách tắc dây
+chuyền logistics, làm giảm hiệu suất vận hành và trải nghiệm khách hàng.
+- Độ chính xác tuyệt đối: TPS là nguồn thu thập dữ liệu gốc (foundation data) cho toàn bộ hệ
+thống MIS và DSS (&quot;Garbage in, garbage out&quot;). Một sai sót nhỏ ở TPS (sai mã vạch, sai trạng
+thái) sẽ dẫn đến thất lạc hàng hóa, sai lệch báo cáo doanh thu và làm hỏng các mô hình dự
+báo chiến lược.

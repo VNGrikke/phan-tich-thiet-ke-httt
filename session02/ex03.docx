@@ -1,0 +1,75 @@
+Phần 1: Lập danh mục công việc &amp; Sản phẩm đầu ra 7 giai đoạn SDLC
+1.1. Danh mục 7 giai đoạn SDLC cho dự án Thù lao tài xế
+Giai đoạn                                                   Công việc cốt lõi                               Sản phẩm đầu ra
+
+1. Lập kế hoạch (Planning)                                  Xác định mục tiêu hệ thống                      Kế hoạch dự án
+                                                            tính thù lao (chính xác, tự
+                                                            động), phạm vi (20k/đơn,                        Tài liệu xác định phạm vi
+                                                            thưởng &gt;50 đơn, giữ tiền
+                                                            đơn tranh chấp), đánh giá
+                                                            rủi ro, phân bổ tài nguyên
+                                                            và lập tiến độ.
+
+2. Phân tích (Analysis)                                     BA/SA thu thập yêu cầu từ                       Tài liệu đặc tả yêu cầu phần mềm
+                                                            Kế toán, mổ xẻ các quy tắc
+                                                            tính tiền, làm rõ bẫy dữ liệu                   Sơ đồ Use Case
+                                                            (Edge Cases) như trạng thái
+                                                            DISPUTED, DELIVERED.
+
+3. Thiết kế (Design)                                        SA thiết kế CSDL lưu trạng                      Sơ đồ thực thể kết nối
+                                                            thái đơn hàng, thiết kế
+                                                            luồng chuyển dữ liệu từ App                     Tài liệu thiết kế hệ thống
+                                                            (TPS) lên hệ thống báo cáo
+                                                            (MIS), phác thảo giao diện                      UI/UX Mockups
+                                                            Dashboard Báo cáo.
+
+4. Lập trình (Coding)                                       Dev viết mã nguồn (VD:                          Mã nguồn (Source Code)
+                                                            hàm Python tính tiền thù
+                                                            lao, thuật toán lọc đơn                         Tài liệu hướng dẫn API
+                                                            DISPUTED), xây dựng API
+                                                            kết nối dữ liệu.
+
+5. Kiểm thử (Testing)                                       QA/QC tạo các kịch bản                          Kịch bản kiểm thử 
+                                                            kiểm thử (Test Cases): test
+                                                            đơn chuẩn 20k, test tài xế                      Báo cáo lỗi
+                                                            vượt 50 đơn, test đơn khiếu
+                                                            nại (bị tạm giữ), đảm bảo số                    Báo cáo kết quả test
+                                                            liệu trên Báo cáo MIS khớp
+                                                            với thực tế TPS.
+
+6. Triển khai (Deployment)                                  Cài đặt và đưa tính năng                        Tài liệu HDSD
+                                                            tính thù lao lên môi trường
+                                                            Production (môi trường                          Release Notes
+                                                            thật). Đào tạo nhân viên kế
+                                                                                                            toán cách xuất báo cáo.
+
+
+7. Bảo trì (Maintenance)                                    Theo dõi hệ thống chạy thực                     Nhật ký bảo trì
+                                                            tế, xử lý các lỗi phát sinh
+                                                            hoặc điều chỉnh cấu hình                        Bản vá lỗi (Patch)
+                                                            khi có thay đổi chính sách
+                                                            thưởng.
+
+1.2. Phân tích hậu quả của việc nhảy khâu (Bỏ qua Phân tích &amp; Kiểm thử)
+- Bỏ qua khâu Phân tích (Analysis): Đội dự án không phát hiện ra &quot;bẫy tranh chấp&quot;
+(DISPUTED). Hệ thống chỉ ghi nhận mù quáng nút &quot;Đã giao&quot; mà không đối chiếu với
+Tổng đài. Hậu quả là Kế toán trả sai tiền cho tài xế (kể cả những đơn giao hỏng/mất
+hàng nhưng tài xế vẫn bấm đã giao), gây thất thoát quỹ lương nghiêm trọng.
+- Bỏ qua khâu Kiểm thử (Testing): Lỗi logic tính sai tiền thưởng vượt mốc không được
+phát hiện trước khi Release. Mã nguồn bị lỗi đi thẳng lên Production khiến Báo cáo MIS
+sai lệch. Tài xế nhận sai tiền sẽ bức xúc, khiếu nại gay gắt, có thể dẫn đến đình công. Bộ
+phận Kế toán phải xử lý khủng hoảng và tính lương thủ công bằng Excel, làm mất uy tín
+của hệ thống.
+
+Phần 2: Thiết kế luồng xử lý TPS ➔ MIS &amp; Triển khai mã nguồn (Python)
+2.1. Trình tự luồng xử lý TPS ➔ MIS
+1. Bước 1 (Ghi nhận ở TPS): Tài xế thao tác trên App Mobile, bấm &quot;Đã lấy hàng&quot; và &quot;Đã giao
+hàng&quot;. Hệ thống TPS lưu trạng thái đơn là DELIVERED. Nếu khách hàng gọi lên Tổng đài
+báo lỗi, Nhân viên CSKH cập nhật trạng thái đơn đó thành DISPUTED trên hệ thống.
+2. Bước 2 (Đồng bộ ETL): Cuối tuần, một tiến trình chạy ngầm (Cronjob) sẽ trích xuất
+(Extract) toàn bộ dữ liệu giao dịch trong tuần từ CSDL của TPS.
+3. Bước 3 (Xử lý ở MIS): Dữ liệu được đưa qua mô-đun thuật toán (như hàm Python bên
+dưới). Hệ thống bóc tách, đếm số đơn DELIVERED (để tính tiền) và DISPUTED (để giữ
+lại).
+4. Bước 4 (Xuất Báo cáo): MIS tổng hợp và hiển thị lên giao diện Dashboard/Xuất Excel
+&quot;Báo cáo Tổng cước thù lao tuần&quot; cho Kế toán.
