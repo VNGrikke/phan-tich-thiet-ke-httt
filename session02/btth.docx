@@ -1,0 +1,123 @@
+1. Phân tích bối cảnh và Khái niệm Hệ thống thông tin FastMart
+1.1. Nhận diện 5 thành phần cốt lõi của HTTT FastMart-Online
+Hệ thống thông tin của FastMart-Online được cấu thành từ 5 yếu tố cơ bản, cần được
+tích hợp đồng bộ để khắc phục tình trạng phân mảnh báo cáo và quy trình hiện tại:
+- Phần cứng (Hardware): Máy chủ Cloud để xử lý dữ liệu thời gian thực; hệ thống máy
+POS tại 25 chi nhánh; thiết bị quét mã vạch (Barcode Scanner) tại kho; thiết bị di
+động (Smartphone/Tablet) của tài xế và khách hàng.
+- Phần mềm (Software): Ứng dụng Mobile/Web cho khách hàng mua sắm trực tuyến;
+Hệ thống quản lý ERP/Back-office cho tồn kho và đơn hàng; Ứng dụng điều phối
+Shipper; Phân hệ Báo cáo trực quan (BI).
+- Dữ liệu (Data): Cơ sở dữ liệu tập trung lưu trữ hồ sơ khách hàng, danh mục sản
+phẩm, trạng thái tồn kho thực tế, lịch sử giao dịch và tọa độ GPS của đơn hàng. Yêu
+cầu tiên quyết là đồng bộ Real-time (thời gian thực).
+- Quy trình (Process): Quy trình vận hành chuẩn hóa bao gồm: Đặt hàng online -&gt;
+Phân bổ về chi nhánh gần nhất -&gt; Soạn hàng tại kho/quầy -&gt; Điều phối shipper -&gt;
+Giao hàng trong 2h -&gt; Đối soát thanh toán.
+- Con người (People): Khách hàng (người dùng cuối); Nhân viên bán hàng &amp; Nhân
+viên kho; Shipper; Quản lý &amp; Ban Giám đốc; Đội ngũ IT nội bộ cùng đối tác gia công
+phần mềm.
+1.2. Phân loại và vai trò các phân hệ HTTT trong sơ đồ tổ chức
+Hệ thống FastMart-Online đóng vai trò hỗ trợ các cấp quản trị khác nhau trong doanh
+nghiệp:
+- Hệ thống Xử lý Giao dịch (TPS): Hỗ trợ cấp tác nghiệp (Nhân viên cửa hàng, kho).
+Đảm nhận xử lý các giao dịch cơ bản hàng ngày như thanh toán POS, quét mã vạch
+xuất/nhập, ghi nhận đơn hàng online.
+- Hệ thống Thông tin Quản lý (MIS): Phục vụ cấp quản lý tầm trung (Cửa hàng
+trưởng, Quản lý khu vực). Tổng hợp dữ liệu từ TPS để xuất các báo cáo định kỳ về
+doanh thu chi nhánh, tình trạng đơn hàng và tồn kho, giúp giám sát hoạt động hiệu
+quả.
+- Hệ thống Hỗ trợ Ra Quyết định (DSS / BI): Phục vụ Ban Giám đốc cấp cao. Phân
+tích khối lượng dữ liệu lớn, trực quan hóa xu hướng mua sắm, dự báo nhu cầu hàng
+hóa để đưa ra chiến lược kinh doanh và tối ưu chuỗi cung ứng dài hạn.
+
+2. Đề xuất Quy trình SDLC và Mô hình phát triển phần mềm
+2.1. Khung quy trình SDLC 7 bước chi tiết
+Dự án FastMart-Online sẽ tuân thủ vòng đời phát triển hệ thống (SDLC) để đảm bảo
+tiến độ và chất lượng:
+Bước 1 - Lập kế hoạch (Planning): Đánh giá tính khả thi, xác định phạm vi dự án (tập
+trung vào tính năng giao hàng 2h), ước lượng ngân sách và phân bổ nguồn lực giữa IT
+nội bộ và đối tác outsource.
+Bước 2 - Phân tích yêu cầu (Analysis): System Analyst thu thập yêu cầu chi tiết từ các
+phòng ban, chuẩn hóa quy trình vận hành và lập tài liệu Đặc tả Yêu cầu Hệ thống
+(SRS).
+Bước 3 - Thiết kế (Design): Lên kiến trúc hệ thống tổng thể, mô hình hóa cơ sở dữ liệu,
+thiết kế giao diện UI/UX và phác thảo các biểu đồ UML để làm bản vẽ kỹ thuật.
+Bước 4 - Phát triển (Development): Lập trình viên tiến hành viết mã nguồn (code) cho cả
+Front-end (Web, App) và Back-end (Hệ thống Back-office, BI).
+Bước 5 - Kiểm thử (Testing): Thực hiện Unit Test, Integration Test và UAT. Mục tiêu
+chính là kiểm tra sự đồng bộ dữ liệu thời gian thực giữa Kho, App và hệ thống Báo cáo,
+triệt tiêu độ trễ 24-48h như trước đây.
+Bước 6 - Triển khai (Deployment): Thử nghiệm (Pilot) tại 1-2 chi nhánh trọng điểm. Khi
+hệ thống ổn định và luồng vận hành trơn tru, sẽ triển khai diện rộng (Roll-out) cho toàn
+bộ 25 chi nhánh.
+Bước 7 - Bảo trì &amp; Hỗ trợ (Maintenance): Vá lỗi phát sinh (Bug fix), nâng cấp hệ thống
+và tinh chỉnh các tính năng dựa trên phản hồi thực tế của người dùng cuối.
+2.2. Mô hình phát triển phần mềm đề xuất
+Mô hình đề xuất: Mô hình Agile/Scrum
+Lý do lựa chọn ưu việt hơn Waterfall trong bối cảnh này:
+- Thích ứng nhanh &amp; Giải phóng rủi ro trễ tiến độ: Chia nhỏ dự án thành các chu kỳ
+ngắn (Sprint từ 2-4 tuần). Thay vì chờ đợi hệ thống hoàn hảo 100%, Agile cho phép
+ra mắt sớm tính năng cốt lõi (Đặt hàng &amp; Giao hàng) để đưa vào thực tế kiểm
+nghiệm.
+- Giải quyết triệt để sự &quot;mơ hồ&quot; trong giao tiếp: Các buổi họp Scrum định kỳ (Daily
+Stand-up, Sprint Review) tạo không gian trao đổi liên tục giữa Ban Giám đốc, IT nội
+bộ và đối tác outsource, đảm bảo sản phẩm đi đúng hướng.
+- Khả năng phản hồi linh hoạt: Dễ dàng điều chỉnh quy trình vận hành đồng bộ giữa
+bán lẻ, kho và giao hàng ngay sau mỗi Sprint nếu phát hiện quy trình cũ không còn
+phù hợp.
+
+3. Định hình vai trò của UML và Xây dựng Mô hình hóa Hệ thống
+3.1. Vai trò của UML trong dự án FastMart
+UML (Unified Modeling Language) đóng vai trò là &quot;ngôn ngữ bản lề&quot; phá vỡ rào cản giao
+tiếp giữa các bên:
+- Với Business Analyst (BA/SA): Là công cụ trực quan hóa các quy trình nghiệp vụ
+phức tạp thành biểu đồ dễ hiểu, giúp xác nhận chính xác yêu cầu từ Ban Giám đốc
+mà không gây hiểu lầm.
+- Với Developer (Dev): Cung cấp &quot;bản vẽ kỹ thuật&quot; mạch lạc về cấu trúc hệ thống và
+luồng dữ liệu, giúp đội ngũ lập trình nội bộ lẫn gia công code đúng logic nghiệp vụ,
+đồng bộ dữ liệu chuẩn xác.
+- Với Tester (QA/QC): Dựa vào các luồng hoạt động chuẩn hóa trong sơ đồ UML để
+viết kịch bản kiểm thử (Test Cases), đảm bảo phủ kín mọi trường hợp ngoại lệ
+(Edge case) trong vận hành thực tế.
+3.2. Đề xuất 4 sơ đồ UML trọng tâm và mục đích sử dụng
+- Sơ đồ Use Case (Use Case Diagram): Nắm bắt các chức năng của hệ thống dưới
+góc độ tác nhân tương tác (Khách hàng, Nhân viên siêu thị, Shipper, Admin). Giúp
+định hình ranh giới chức năng của toàn dự án.
+- Sơ đồ Hoạt động (Activity Diagram): Trực quan hóa một luồng nghiệp vụ cụ thể.
+Quan trọng nhất là dùng sơ đồ này để vẽ chi tiết &quot;Quy trình xử lý đơn đặt hàng và
+giao trong 2h&quot;, qua đó chuẩn hóa sự phối hợp nhịp nhàng giữa bộ phận bán lẻ - kho
+- vận chuyển.
+- Sơ đồ Lớp (Class Diagram): Thể hiện cấu trúc tĩnh của hệ thống qua các thực thể
+(Product, Order, Customer, Inventory...) và mối quan hệ giữa chúng. Là bộ khung
+nền tảng quan trọng để Developer thiết kế Database.
+- Sơ đồ Tuần tự (Sequence Diagram): Mô tả thứ tự tương tác, trao đổi thông điệp
+(message) giữa các đối tượng theo dòng thời gian. Đặc biệt cần thiết để thiết kế
+luồng &quot;Thanh toán Online&quot; hoặc luồng &quot;Cập nhật tồn kho Real-time&quot;.
+
+4. Tổng hợp Đề xuất Giải pháp Hệ thống Toàn diện
+Kính gửi Ban Giám đốc FastMart,
+Để giải quyết triệt để vấn đề chậm trễ số liệu báo cáo, thiếu chuẩn hóa vận hành và rủi
+ro trễ tiến độ dự án chuyển đổi số, Đội ngũ Phân tích hệ thống đề xuất giải pháp toàn
+diện sau đây:
+1. Chuẩn hóa hạ tầng và luồng dữ liệu:
+Xây dựng hệ thống đồng bộ xoay quanh 5 thành tố (Phần cứng, Phần mềm, Dữ liệu,
+Quy trình, Con người) với trung tâm là nền tảng Cơ sở dữ liệu xử lý theo thời gian thực
+(Real-time). Việc tích hợp chặt chẽ hệ thống Back-office ERP với phân hệ BI sẽ giúp
+loại bỏ hoàn toàn độ trễ 24-48 giờ, giúp cấp quản lý nhìn thấy ngay biến động tồn kho
+và doanh thu.
+
+2. Áp dụng Mô hình quản trị Agile/Scrum linh hoạt:
+Triển khai dự án theo chu trình SDLC 7 bước nhưng vận hành thực thi bằng phương
+pháp Scrum. Cách tiếp cận này giúp chia nhỏ rủi ro, phá vỡ rào cản giao tiếp giữa IT nội
+bộ và đối tác Outsource, đồng thời cho phép FastMart đưa sớm các module trọng yếu
+ra thị trường để cạnh tranh.
+3. Lấy UML làm chuẩn mực giao tiếp kỹ thuật:
+Áp dụng bộ tiêu chuẩn UML (Use Case, Activity, Class, Sequence) làm tài liệu giao tiếp
+thống nhất. Đây sẽ là &quot;bản vẽ kỹ thuật&quot; sống, đảm bảo toàn bộ yêu cầu nghiệp vụ phức
+tạp từ Ban Giám đốc được chuyển hóa thành mã nguồn (code) một cách chuẩn xác
+100%.
+
+Việc áp dụng đồng bộ chiến lược phân tích nghiệp vụ, mô hình Agile và tiêu chuẩn hóa
+UML sẽ là chìa khóa then chốt để dự án FastMart-Online vận hành trơn tru, hiện thực
+hóa cam kết &quot;Giao hàng 2 giờ&quot; và giữ vững vị thế trên thị trường bán lẻ.

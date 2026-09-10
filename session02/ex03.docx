@@ -51,10 +51,11 @@ Giai đoạn                                                   Công việc cố
                                                             thưởng.
 
 1.2. Phân tích hậu quả của việc nhảy khâu (Bỏ qua Phân tích &amp; Kiểm thử)
-- Bỏ qua khâu Phân tích (Analysis): Đội dự án không phát hiện ra &quot;bẫy tranh chấp&quot;
-(DISPUTED). Hệ thống chỉ ghi nhận mù quáng nút &quot;Đã giao&quot; mà không đối chiếu với
+- Bỏ qua khâu Phân tích (Analysis): Đội dự án không phát hiện ra "bẫy tranh chấp"
+(DISPUTED). Hệ thống chỉ ghi nhận mù quáng nút "Đã giao" mà không đối chiếu với
 Tổng đài. Hậu quả là Kế toán trả sai tiền cho tài xế (kể cả những đơn giao hỏng/mất
 hàng nhưng tài xế vẫn bấm đã giao), gây thất thoát quỹ lương nghiêm trọng.
+
 - Bỏ qua khâu Kiểm thử (Testing): Lỗi logic tính sai tiền thưởng vượt mốc không được
 phát hiện trước khi Release. Mã nguồn bị lỗi đi thẳng lên Production khiến Báo cáo MIS
 sai lệch. Tài xế nhận sai tiền sẽ bức xúc, khiếu nại gay gắt, có thể dẫn đến đình công. Bộ
@@ -63,8 +64,8 @@ của hệ thống.
 
 Phần 2: Thiết kế luồng xử lý TPS ➔ MIS &amp; Triển khai mã nguồn (Python)
 2.1. Trình tự luồng xử lý TPS ➔ MIS
-1. Bước 1 (Ghi nhận ở TPS): Tài xế thao tác trên App Mobile, bấm &quot;Đã lấy hàng&quot; và &quot;Đã giao
-hàng&quot;. Hệ thống TPS lưu trạng thái đơn là DELIVERED. Nếu khách hàng gọi lên Tổng đài
+1. Bước 1 (Ghi nhận ở TPS): Tài xế thao tác trên App Mobile, bấm "Đã lấy hàng" và "Đã giao
+hàng". Hệ thống TPS lưu trạng thái đơn là DELIVERED. Nếu khách hàng gọi lên Tổng đài
 báo lỗi, Nhân viên CSKH cập nhật trạng thái đơn đó thành DISPUTED trên hệ thống.
 2. Bước 2 (Đồng bộ ETL): Cuối tuần, một tiến trình chạy ngầm (Cronjob) sẽ trích xuất
 (Extract) toàn bộ dữ liệu giao dịch trong tuần từ CSDL của TPS.
@@ -72,4 +73,4 @@ báo lỗi, Nhân viên CSKH cập nhật trạng thái đơn đó thành DISPUT
 dưới). Hệ thống bóc tách, đếm số đơn DELIVERED (để tính tiền) và DISPUTED (để giữ
 lại).
 4. Bước 4 (Xuất Báo cáo): MIS tổng hợp và hiển thị lên giao diện Dashboard/Xuất Excel
-&quot;Báo cáo Tổng cước thù lao tuần&quot; cho Kế toán.
+"Báo cáo Tổng cước thù lao tuần" cho Kế toán.
