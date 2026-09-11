@@ -17,6 +17,7 @@ Giao hàng trong 2h -&gt; Đối soát thanh toán.
 - Con người (People): Khách hàng (người dùng cuối); Nhân viên bán hàng &amp; Nhân
 viên kho; Shipper; Quản lý &amp; Ban Giám đốc; Đội ngũ IT nội bộ cùng đối tác gia công
 phần mềm.
+
 1.2. Phân loại và vai trò các phân hệ HTTT trong sơ đồ tổ chức
 Hệ thống FastMart-Online đóng vai trò hỗ trợ các cấp quản trị khác nhau trong doanh
 nghiệp:
@@ -53,6 +54,7 @@ hệ thống ổn định và luồng vận hành trơn tru, sẽ triển khai d
 bộ 25 chi nhánh.
 Bước 7 - Bảo trì &amp; Hỗ trợ (Maintenance): Vá lỗi phát sinh (Bug fix), nâng cấp hệ thống
 và tinh chỉnh các tính năng dựa trên phản hồi thực tế của người dùng cuối.
+
 2.2. Mô hình phát triển phần mềm đề xuất
 Mô hình đề xuất: Mô hình Agile/Scrum
 Lý do lựa chọn ưu việt hơn Waterfall trong bối cảnh này:
@@ -80,6 +82,7 @@ luồng dữ liệu, giúp đội ngũ lập trình nội bộ lẫn gia công c
 - Với Tester (QA/QC): Dựa vào các luồng hoạt động chuẩn hóa trong sơ đồ UML để
 viết kịch bản kiểm thử (Test Cases), đảm bảo phủ kín mọi trường hợp ngoại lệ
 (Edge case) trong vận hành thực tế.
+
 3.2. Đề xuất 4 sơ đồ UML trọng tâm và mục đích sử dụng
 - Sơ đồ Use Case (Use Case Diagram): Nắm bắt các chức năng của hệ thống dưới
 góc độ tác nhân tương tác (Khách hàng, Nhân viên siêu thị, Shipper, Admin). Giúp
