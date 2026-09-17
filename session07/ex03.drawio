@@ -1,0 +1,46 @@
+<mxfile host="Electron">
+  <diagram name="Page-1" id="ciyzV943e_xVQlTq38bU">
+    <mxGraphModel dx="897" dy="696" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="lHRk3Ghq8xuIDYCyNvUQ-16" edge="1" parent="1" source="lHRk3Ghq8xuIDYCyNvUQ-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endArrow=diamondThin;endFill=0;strokeWidth=1;startArrow=classic;startFill=1;" target="lHRk3Ghq8xuIDYCyNvUQ-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lHRk3Ghq8xuIDYCyNvUQ-5" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="teacher" vertex="1">
+          <mxGeometry height="78" width="140" x="110" y="588" as="geometry" />
+        </mxCell>
+        <mxCell id="lHRk3Ghq8xuIDYCyNvUQ-8" parent="lHRk3Ghq8xuIDYCyNvUQ-5" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="-teacherId: string" vertex="1">
+          <mxGeometry height="26" width="140" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="lHRk3Ghq8xuIDYCyNvUQ-13" parent="lHRk3Ghq8xuIDYCyNvUQ-5" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="-name: string" vertex="1">
+          <mxGeometry height="26" width="140" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="lHRk3Ghq8xuIDYCyNvUQ-20" edge="1" parent="1" source="lHRk3Ghq8xuIDYCyNvUQ-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;startArrow=diamondThin;startFill=1;" target="lHRk3Ghq8xuIDYCyNvUQ-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lHRk3Ghq8xuIDYCyNvUQ-9" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="section" vertex="1">
+          <mxGeometry height="78" width="140" x="360" y="588" as="geometry" />
+        </mxCell>
+        <mxCell id="lHRk3Ghq8xuIDYCyNvUQ-10" parent="lHRk3Ghq8xuIDYCyNvUQ-9" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="-sectionId: string" vertex="1">
+          <mxGeometry height="26" width="140" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="lHRk3Ghq8xuIDYCyNvUQ-14" parent="lHRk3Ghq8xuIDYCyNvUQ-9" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="-room: string" vertex="1">
+          <mxGeometry height="26" width="140" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="lHRk3Ghq8xuIDYCyNvUQ-11" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="lession" vertex="1">
+          <mxGeometry height="78" width="140" x="610" y="588" as="geometry" />
+        </mxCell>
+        <mxCell id="lHRk3Ghq8xuIDYCyNvUQ-12" parent="lHRk3Ghq8xuIDYCyNvUQ-11" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="-lessonId: string" vertex="1">
+          <mxGeometry height="26" width="140" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="lHRk3Ghq8xuIDYCyNvUQ-15" parent="lHRk3Ghq8xuIDYCyNvUQ-11" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="-content: string" vertex="1">
+          <mxGeometry height="26" width="140" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="lHRk3Ghq8xuIDYCyNvUQ-21" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;span style=&quot;&quot;&gt;Teacher và Section (Aggregation - Hình thoi rỗng):&lt;/span&gt; Mối quan hệ này có tính gắn kết lỏng lẻo vì Giảng viên và Lớp học phần có vòng đời độc lập; nếu Lớp học phần bị hủy, tài khoản Giảng viên vẫn tồn tại trên hệ thống nhân sự để được phân công lớp khác.&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;&quot;&gt;Lesson và Section (Composition - Hình thoi đặc):&lt;/span&gt; Mối quan hệ này có tính phụ thuộc vòng đời chặt chẽ (sống cùng sống, chết cùng chết); Bài giảng được soạn riêng cho Lớp học phần nên khi Lớp học phần bị xóa, toàn bộ Bài giảng bên trong nó bắt buộc phải bị xóa sạch khỏi cơ sở dữ liệu.&lt;/div&gt;" vertex="1">
+          <mxGeometry height="130" width="400" x="110" y="690" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
