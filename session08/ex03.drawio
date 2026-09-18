@@ -47,7 +47,7 @@
         <mxCell id="wVkRNos94pc1nXksFQkG-9" parent="wVkRNos94pc1nXksFQkG-7" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;fontFamily=Times New Roman;fontSize=14;" value="" vertex="1">
           <mxGeometry height="8" width="160" y="78" as="geometry" />
         </mxCell>
-        <mxCell id="wVkRNos94pc1nXksFQkG-32" edge="1" parent="1" source="wVkRNos94pc1nXksFQkG-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endArrow=blockThin;endFill=1;endSize=14;fontFamily=Times New Roman;fontSize=14;" target="wVkRNos94pc1nXksFQkG-23">
+        <mxCell id="wVkRNos94pc1nXksFQkG-32" edge="1" parent="1" source="wVkRNos94pc1nXksFQkG-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endArrow=blockThin;endFill=1;endSize=14;fontFamily=Times New Roman;fontSize=14;dashed=1;" target="wVkRNos94pc1nXksFQkG-23">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="wVkRNos94pc1nXksFQkG-11" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=14;" value="DonHang" vertex="1">
