@@ -1,0 +1,66 @@
+<mxfile host="Electron">
+  <diagram name="Page-1" id="jwDwouXWCg0t9IBAsegZ">
+    <mxGraphModel dx="1084" dy="841" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="rzaGg60qyt21MgSLUQFC-14" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="nhan vien kho" vertex="1">
+          <mxGeometry height="60" width="30" x="120" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="rzaGg60qyt21MgSLUQFC-17" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=none;endFill=0;dashed=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="351.61000000000007" y="430" as="sourcePoint" />
+            <mxPoint x="351.67" y="860" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rzaGg60qyt21MgSLUQFC-15" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#bac8d3;strokeColor=#23445d;" value="WarehouseUI" vertex="1">
+          <mxGeometry height="30" width="101.88" x="297" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="rzaGg60qyt21MgSLUQFC-16" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#bac8d3;strokeColor=#23445d;" value="IventoryManager" vertex="1">
+          <mxGeometry height="30" width="101.88" x="552" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="rzaGg60qyt21MgSLUQFC-18" edge="1" parent="1" source="rzaGg60qyt21MgSLUQFC-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;dashed=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="560" y="540" as="sourcePoint" />
+            <mxPoint x="603" y="860" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rzaGg60qyt21MgSLUQFC-19" edge="1" parent="1" source="rzaGg60qyt21MgSLUQFC-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;endArrow=none;endFill=0;dashed=1;exitPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="135" y="670" />
+            </Array>
+            <mxPoint x="134.5" y="480" as="sourcePoint" />
+            <mxPoint x="134.5" y="860" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rzaGg60qyt21MgSLUQFC-23" parent="1" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+          <mxGeometry height="282" width="10" x="347" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="rzaGg60qyt21MgSLUQFC-24" edge="1" parent="1" style="html=1;verticalAlign=bottom;startArrow=none;endArrow=block;startSize=8;curved=0;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=5;startFill=0;" target="rzaGg60qyt21MgSLUQFC-23" value="quet ma kien hang">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="134" y="495" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rzaGg60qyt21MgSLUQFC-25" parent="1" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+          <mxGeometry height="80" width="10" x="597.94" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="rzaGg60qyt21MgSLUQFC-26" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=5;" target="rzaGg60qyt21MgSLUQFC-25" value="export_package()">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="585" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rzaGg60qyt21MgSLUQFC-27" edge="1" parent="1" source="rzaGg60qyt21MgSLUQFC-25" style="html=1;verticalAlign=bottom;endArrow=block;dashed=1;endSize=8;curved=0;rounded=0;exitX=0;exitY=1;exitDx=0;exitDy=-5;endFill=1;" target="rzaGg60qyt21MgSLUQFC-23" value="ket qua xuat kho">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="430" y="655" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rzaGg60qyt21MgSLUQFC-28" edge="1" parent="1" source="rzaGg60qyt21MgSLUQFC-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=0;innerLoopWaypoints=1;exitX=1;exitY=0;exitDx=0;exitDy=5;exitPerimeter=0;" target="rzaGg60qyt21MgSLUQFC-25" value="kiem tra luu lai kho">
+          <mxGeometry relative="1" x="-0.4667" y="43" as="geometry">
+            <mxPoint x="-3" y="-15" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

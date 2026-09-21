@@ -1,0 +1,143 @@
+<mxfile host="Electron">
+  <diagram name="Page-1" id="7Zo3xd-r1NR9eawU53Ea">
+    <mxGraphModel dx="1301" dy="1009" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="aCtxZUMgccW62wwaYvrp-37" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};participant=umlActor;" value="" vertex="1">
+          <mxGeometry height="570" width="20" x="70" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="aCtxZUMgccW62wwaYvrp-39" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="mobile app" vertex="1">
+          <mxGeometry height="570" width="100" x="246" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="aCtxZUMgccW62wwaYvrp-50" parent="aCtxZUMgccW62wwaYvrp-39" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+          <mxGeometry height="492" width="10" x="45" y="58" as="geometry" />
+        </mxCell>
+        <mxCell id="aCtxZUMgccW62wwaYvrp-54" edge="1" parent="aCtxZUMgccW62wwaYvrp-39" source="aCtxZUMgccW62wwaYvrp-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=0;innerLoopWaypoints=1;exitX=1;exitY=0;exitDx=0;exitDy=5;exitPerimeter=0;endSize=12;" target="aCtxZUMgccW62wwaYvrp-50">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="55" y="120" />
+              <mxPoint x="75" y="120" />
+              <mxPoint x="75" y="150" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aCtxZUMgccW62wwaYvrp-56" connectable="0" parent="aCtxZUMgccW62wwaYvrp-54" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="cong don tong tien" vertex="1">
+          <mxGeometry relative="1" x="0.3701" y="4" as="geometry">
+            <mxPoint x="45" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aCtxZUMgccW62wwaYvrp-40" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="paymentservice" vertex="1">
+          <mxGeometry height="570" width="100" x="480" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="aCtxZUMgccW62wwaYvrp-41" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="notificationservice" vertex="1">
+          <mxGeometry height="570" width="100" x="699.33" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="aCtxZUMgccW62wwaYvrp-53" parent="aCtxZUMgccW62wwaYvrp-41" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+          <mxGeometry height="18" width="10" x="45" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="aCtxZUMgccW62wwaYvrp-42" parent="1" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;" value="loop" vertex="1">
+          <mxGeometry height="90" width="250" x="220" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="aCtxZUMgccW62wwaYvrp-43" parent="1" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;" value="opt" vertex="1">
+          <mxGeometry height="120" width="380" x="220" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="aCtxZUMgccW62wwaYvrp-44" parent="1" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;" value="alt" vertex="1">
+          <mxGeometry height="140" width="543.09" x="220" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="aCtxZUMgccW62wwaYvrp-45" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="[tung mon trong gio hang" vertex="1">
+          <mxGeometry height="19.7" width="140.23" x="329.77" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="aCtxZUMgccW62wwaYvrp-46" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="[co nhap ma voucher]" vertex="1">
+          <mxGeometry height="19.7" width="118.91" x="329.77" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="aCtxZUMgccW62wwaYvrp-47" parent="1" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;dashed=1;" value="" vertex="1">
+          <mxGeometry height="8" width="543.09" x="220" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="aCtxZUMgccW62wwaYvrp-48" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="[du tien]" vertex="1">
+          <mxGeometry height="8" width="54.84" x="324.77" y="555" as="geometry" />
+        </mxCell>
+        <mxCell id="aCtxZUMgccW62wwaYvrp-49" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="[khong du tien]" vertex="1">
+          <mxGeometry height="15" width="91.08" x="323.77" y="627" as="geometry" />
+        </mxCell>
+        <mxCell id="aCtxZUMgccW62wwaYvrp-68" edge="1" parent="1" source="aCtxZUMgccW62wwaYvrp-51" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=0;exitX=0;exitY=1;exitDx=0;exitDy=-5;exitPerimeter=0;dashed=1;endSize=12;" target="aCtxZUMgccW62wwaYvrp-50" value="ket qua ap dung&amp;nbsp;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="360" y="485" />
+              <mxPoint x="360" y="485" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aCtxZUMgccW62wwaYvrp-51" parent="1" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+          <mxGeometry height="50" width="10" x="525" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="aCtxZUMgccW62wwaYvrp-66" edge="1" parent="1" source="aCtxZUMgccW62wwaYvrp-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=0;dashed=1;endSize=12;" target="aCtxZUMgccW62wwaYvrp-50" value="ket qua thanh cong">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="470" y="580" />
+              <mxPoint x="470" y="580" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aCtxZUMgccW62wwaYvrp-67" edge="1" parent="1" source="aCtxZUMgccW62wwaYvrp-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=0;endSize=12;" value="ket qua that bai">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="350" y="660" />
+              <mxPoint x="350" y="660" />
+            </Array>
+            <mxPoint x="301" y="660" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aCtxZUMgccW62wwaYvrp-52" parent="1" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+          <mxGeometry height="158" width="10" x="525" y="532" as="geometry" />
+        </mxCell>
+        <mxCell id="aCtxZUMgccW62wwaYvrp-57" edge="1" parent="1" source="aCtxZUMgccW62wwaYvrp-37" style="endArrow=classic;endFill=1;endSize=12;html=1;rounded=0;startArrow=none;startFill=0;" target="aCtxZUMgccW62wwaYvrp-50" value="chon thanh toan">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <Array as="points">
+              <mxPoint x="190" y="220" />
+            </Array>
+            <mxPoint x="130" y="230" as="sourcePoint" />
+            <mxPoint x="290" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aCtxZUMgccW62wwaYvrp-58" edge="1" parent="1" style="endArrow=classic;endFill=1;endSize=12;html=1;rounded=0;startArrow=none;startFill=0;" target="aCtxZUMgccW62wwaYvrp-51" value="yeu cau ap dung voucher">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <Array as="points">
+              <mxPoint x="381.66" y="440" />
+              <mxPoint x="481.66" y="440" />
+            </Array>
+            <mxPoint x="302.66" y="440" as="sourcePoint" />
+            <mxPoint x="526.66" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aCtxZUMgccW62wwaYvrp-61" edge="1" parent="1" style="endArrow=classic;endFill=1;endSize=12;html=1;rounded=0;startArrow=none;startFill=0;" value="yeu cau thanh toan">
+          <mxGeometry relative="1" width="160" x="0.0427" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="419.15999999999997" y="533" />
+            </Array>
+            <mxPoint x="301" y="533" as="sourcePoint" />
+            <mxPoint x="525" y="533" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aCtxZUMgccW62wwaYvrp-64" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=0;exitX=1;exitY=0;exitDx=0;exitDy=5;exitPerimeter=0;entryX=0;entryY=0;entryDx=0;entryDy=5;entryPerimeter=0;endArrow=open;endFill=0;strokeWidth=1;endSize=12;" value="bao nha hang co don moi">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="535" y="600" />
+            </Array>
+            <mxPoint x="535" y="542" as="sourcePoint" />
+            <mxPoint x="744.3299999999999" y="600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aCtxZUMgccW62wwaYvrp-69" edge="1" parent="1" source="aCtxZUMgccW62wwaYvrp-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=0;exitX=0;exitY=1;exitDx=0;exitDy=-5;exitPerimeter=0;endSize=12;" target="aCtxZUMgccW62wwaYvrp-37" value="hien thi trang thai thanh toan">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="130" y="705" />
+              <mxPoint x="130" y="705" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
