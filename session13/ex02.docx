@@ -1,0 +1,31 @@
+Phân tích vai trò UI State
+(1) Tại sao bản vẽ thiết kế (UI Design) cần phải có nhiều trạng thái tĩnh trước khi làm Prototype?
+
+Prototype (nguyên mẫu tương tác) bản chất là việc "nối dây" (wiring) giữa các bản vẽ tĩnh để mô phỏng sự thay đổi 
+của giao diện theo thời gian hoặc thao tác của người dùng. Nếu không chuẩn bị đủ các trạng thái tĩnh (UI States), 
+bạn sẽ gặp các vấn đề cốt lõi sau:
+
+- Thiếu "nguyên liệu" để tạo tương tác: Prototype không tự sinh ra giao diện mới, nó chỉ chuyển đổi từ khung hình 
+này sang khung hình khác. Muốn mô phỏng một nút từ "không bấm được" sang "bấm được", bạn bắt buộc phải có sẵn hai 
+bản vẽ tĩnh của nút đó.
+
+- Đảm bảo tính toàn vẹn khi Handoff: Lập trình viên (Developer) cần thông số thị giác cụ thể (mã màu, viền, độ bóng, icon) 
+cho từng trạng thái (Disabled, Default, Hover, Loading) để viết CSS/Code. Nếu Designer không vẽ, Developer sẽ phải tự đoán, 
+dẫn đến sản phẩm thực tế sai lệch với thiết kế ban đầu.
+
+- Định hình luồng logic hệ thống: Việc vẽ các trạng thái buộc Designer phải suy nghĩ về mặt nghiệp vụ (ví dụ: khi nào nút 
+sáng lên, khi đang tải thì người dùng có được bấm tiếp không) thay vì chỉ vẽ cho đẹp.
+
+(2) Nhầm lẫn của Tester/Khách hàng nếu dùng bản thiết kế hiện tại (nút luôn sáng) để làm Prototype:
+
+Nếu nút "Thanh toán" luôn ở trạng thái Default (sáng màu) ngay cả khi form trống, nó tạo ra một False 
+Affordance (tín hiệu giả về khả năng tương tác). Trải nghiệm thử sẽ dẫn đến các hiểu lầm tai hại:
+
+- Tưởng hệ thống bị lỗi (Bug): Tester/Khách hàng thấy nút sáng, họ sẽ click. Nhưng vì form chưa điền đủ 
+nên Prototype không chuyển trang. Họ sẽ báo cáo rằng "Nút thanh toán bị liệt/không hoạt động" thay vì hiểu rằng họ cần điền form.
+
+- Mất phương hướng trong quá trình giao dịch: Nếu không có trạng thái Loading sau khi bấm, hệ thống trông như đang bị đơ (freeze). 
+Người dùng sẽ có xu hướng bấm liên tục nhiều lần (spam click). Trong thực tế, điều này có thể dẫn đến việc gọi API thanh toán nhiều 
+lần, gây lỗi trừ tiền đúp của khách hàng.
+
+ link figma: https://www.figma.com/site/pASFE07TD7wlgZSPS0SDsQ/Untitled?node-id=0-1&t=5kkD46nkrzswjv4w-1

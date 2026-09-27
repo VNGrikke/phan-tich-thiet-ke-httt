@@ -1,0 +1,19 @@
+ Phân tích lỗi giao diện
+ (1) Hiện trạng lỗi của trường Giới tính: Giao diện hiện tại đang sử dụng thành phần Checkbox (hộp kiểm hình vuông) cho các tùy chọn "Nam" và "Nữ". 
+ Đặc tính của Checkbox là cho phép chọn nhiều giá trị cùng lúc, dẫn đến việc người dùng có thể tích chọn cả hai giới tính hoặc bỏ trống, gây ra bẫy 
+ dữ liệu và làm sai lệch hồ sơ khách hàng.   
+
+ (2) Nguyên tắc UI bị vi phạm:
+
+    Nguyên tắc Affordance (Tính gợi ý/nhận diện): Theo tiêu chuẩn thiết kế chung (mental model), người dùng hiểu rằng hình vuông (Checkbox) dành cho 
+    việc chọn nhiều đáp án. Việc dùng Checkbox cho một câu hỏi chỉ có 1 đáp án làm sai lệch tính gợi ý của giao diện.   
+
+    Nguyên tắc Error Prevention (Phòng ngừa lỗi): Thiết kế hiện tại không ngăn chặn được thao tác nhập liệu sai (chọn 2 giới tính) ngay từ bước giao 
+    diện, buộc hệ thống phải xử lý lỗi ở backend hoặc hiển thị thông báo lỗi (validation error), làm tăng tỷ lệ rời bỏ (drop-off rate).
+    
+    Nguyên tắc Clarity (Tính rõ ràng): Giao diện không truyền tải được quy tắc nghiệp vụ cơ bản là "chỉ được chọn duy nhất 1 giới tính".
+
+ (3) Thành phần UI chuẩn cần thay thế: Cần thay thế Checkbox bằng Radio Button (Nút chọn hình tròn). Đặc tính cốt lõi của Radio Button trong Input 
+ controls là "Mutually Exclusive" (Loại trừ lẫn nhau) — tại một thời điểm, trong cùng một nhóm, hệ thống chỉ cho phép tồn tại duy nhất một lựa chọn được kích hoạt.
+
+ link figma: https://www.figma.com/site/pASFE07TD7wlgZSPS0SDsQ/Untitled?node-id=0-1&t=5kkD46nkrzswjv4w-1
